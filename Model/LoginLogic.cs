@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    internal class LoginLogic
+    public class LoginLogic
     {
-        public void Login(string userName) { 
-            LoginDAO loginDAO = new LoginDAO();
-            loginDAO.GetUser(userName);
+        private readonly LoginDAO loginDAO = new LoginDAO();
+        public LoginLogic() { }
+        public bool Login(string userName, string password) { 
+            
+            var storedPassword = loginDAO.GetUserPassword(userName);
+            if (storedPassword == null) return false;
+            
+            return storedPassword == password;
         }
     }
 }
