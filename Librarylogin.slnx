@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Assessment1/LoginView.csproj" Id="5abcbcc4-e427-4020-bc28-b826a5b91533" />
+  <Project Path="Controller/Controller.csproj" Id="8b856ff7-a4a3-4be0-ac44-547a296d6adb" />
+  <Project Path="Model/Model.csproj" Id="a42c3d62-5685-452b-b484-198d915eebdf" />
+</Solution>
