@@ -11,10 +11,10 @@ using Controller;
 
 namespace Assessment1
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private LoginController loginController = new LoginController();
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -51,21 +51,17 @@ namespace Assessment1
 
             errorProvider.Clear();
 
-            int isValid = loginController.LoginValidation();
+            if (loginController.isLoginSuccessful()){
+                MessageBox.Show("Login successful");
+                this.Hide();
+                
+                Home home = new Home();
+                home.ShowDialog();
+                this.Close();
 
-            switch(isValid)
-            {
-                case 1:
-                    errorProvider.SetError(textBox_username, "Username is required");
-                    return;
-                case 2:
-                    errorProvider.SetError(textBox_password, "Password is required");
-                    return;
-                default:
-                    break;
-            }
-
-            
+            } else {
+                errorProvider.SetError(textBox_password, "Invalid username or password");
+            }   
             
         }
     }

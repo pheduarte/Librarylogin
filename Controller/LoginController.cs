@@ -12,30 +12,20 @@ namespace Controller
         private string userName;
         private string password;
 
-        readonly LoginLogic loginLogic = new LoginLogic();
+        private readonly LoginLogic loginLogic = new LoginLogic();
 
         public string UserName { get => userName; set => userName = value; }
         public string Password { get => password; set => password = value; }
 
-        public LoginController() {
-            
-            loginLogic.Login(UserName, Password);
+        public LoginController() { }
 
-        }
+        public bool isLoginSuccessful() {
 
-        public int LoginValidation() {
-            
-            if (string.IsNullOrWhiteSpace(UserName))
-            {
-                return 1;
-            }
+            if (string.IsNullOrWhiteSpace(UserName)) return false;
 
-            if (string.IsNullOrWhiteSpace(Password))
-            {
-                return 2;
-            }
+            if (string.IsNullOrWhiteSpace(Password)) return false;
 
-            return 0;
+            return loginLogic.Login(UserName, Password);
         }
         
 

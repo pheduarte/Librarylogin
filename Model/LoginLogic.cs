@@ -8,11 +8,14 @@ namespace Model
 {
     public class LoginLogic
     {
+        private readonly LoginDAO loginDAO = new LoginDAO();
         public LoginLogic() { }
-        public void Login(string userName, string password) { 
-            LoginDAO loginDAO = new LoginDAO();
-            loginDAO.GetUser(userName);
-            loginDAO.GetUser(password);
+        public bool Login(string userName, string password) { 
+            
+            var storedPassword = loginDAO.GetUserPassword(userName);
+            if (storedPassword == null) return false;
+            
+            return storedPassword == password;
         }
     }
 }
