@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.DataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +18,30 @@ namespace Model
         public int UserLevel { get => userLevel; set => userLevel = value; }
 
         private readonly LoginDAO loginDAO = new LoginDAO();
-
-        public LoginLogic() { }
         public DataSet1.TabUserDataTable userExists;
+
+        public LoginLogic() { 
+
+            
+        }
+
         public bool IsValid(string username, string password)
         {
             userExists = loginDAO.Login(username, password);
 
-            if (userExists.Rows.Count == 0)
+            return userExists.Rows.Count > 0;
+        }
+
+        public string GetUserLevel(string username, string password)
+        {
+            userExists = loginDAO.Login(username, password);
+
+            if (userExists.Rows.Count > 0)
             {
-                return false;
+                var user = userExists[0];
+                return user.UserLevel.ToString();
             }
-            else
-            {
-                return true;
-            }
+            return null;
         }
     }
 }
