@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Assessment1
 {
-    public partial class Home : Form
+    public partial class StaffDashboard : Form
     {
-        public Home()
+        public StaffDashboard()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

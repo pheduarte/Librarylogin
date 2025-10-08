@@ -8,14 +8,30 @@ namespace Model
 {
     public class LoginLogic
     {
+        private string userName;
+        private string password;
+        private int userLevel;
+
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
+        public int UserLevel { get => userLevel; set => userLevel = value; }
+
         private readonly LoginDAO loginDAO = new LoginDAO();
+
         public LoginLogic() { }
-        public bool Login(string userName, string password) { 
-            
-            var storedPassword = loginDAO.GetUserPassword(userName);
-            if (storedPassword == null) return false;
-            
-            return storedPassword == password;
+        public DataSet1.TabUserDataTable userExists;
+        public bool IsValid(string username, string password)
+        {
+            userExists = loginDAO.Login(username, password);
+
+            if (userExists.Rows.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
