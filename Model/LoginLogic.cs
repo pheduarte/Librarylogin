@@ -25,6 +25,7 @@ namespace Model
             
         }
 
+        // Method to validate user credentials
         public bool IsValid(string username, string password)
         {
             userExists = loginDAO.Login(username, password);
@@ -32,6 +33,7 @@ namespace Model
             return userExists.Rows.Count > 0;
         }
 
+        // Method to get user level based on username and password
         public string GetUserLevel(string username, string password)
         {
             userExists = loginDAO.Login(username, password);

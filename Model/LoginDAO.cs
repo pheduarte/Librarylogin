@@ -13,6 +13,7 @@ namespace Model
         public LoginDAO() {
         }
 
+        // Method to check if user exists with given username and password
         public DataSet1.TabUserDataTable Login(string username, string password) {
             DataSet1TableAdapters.TabUserTableAdapter userAdapter = new DataSet1TableAdapters.TabUserTableAdapter();
 

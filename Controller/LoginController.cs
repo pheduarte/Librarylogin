@@ -26,10 +26,12 @@ namespace Controller
             UserLevel = loginLogic.UserLevel;
         }
 
+        // Method to validate user credentials
         public bool IsValid(string username, string password) {
             return loginLogic.IsValid(username, password);
         }
 
+        // Method to get user level based on username and password
         public int GetUserLevel(string username, string password) {
             var levelString = loginLogic.GetUserLevel(username, password);
             if (int.TryParse(levelString, out int level)) {
