@@ -49,21 +49,32 @@ namespace Assessment1
             loginController.UserName = textBox_username.Text;
             loginController.Password = textBox_password.Text;
 
+            var userLevel = loginController.GetUserLevel(loginController.UserName, loginController.Password);
+
             if (loginController.IsValid(loginController.UserName, loginController.Password))
             {
                 MessageBox.Show("Login successful");
                 this.Hide();
-
-                StudentDashboard studentDashBoard = new StudentDashboard();
-                studentDashBoard.ShowDialog();
-                this.Close();
+                
+                if (userLevel == 1)
+                {
+                    StudentDashboard studentDashBoard = new StudentDashboard();
+                    studentDashBoard.ShowDialog();
+                    this.Close();
+                    return;
+               
+                } else { 
+                    
+                    StaffDashboard adminDashboard = new StaffDashboard();
+                    adminDashboard.ShowDialog();
+                    this.Close();
+                    return;
+                }                
             }
             else
             {
                 MessageBox.Show("Invalid username or password");
             }
-
-
         }
     }
 }
