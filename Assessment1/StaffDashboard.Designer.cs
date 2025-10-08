@@ -1,6 +1,6 @@
 ﻿namespace Assessment1
 {
-    partial class Home
+    partial class StaffDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(611, 356);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "It worked!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // Home
+            // StaffDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 818);
-            this.Controls.Add(this.label1);
-            this.Name = "Home";
-            this.Text = "AIT Library";
+            this.ClientSize = new System.Drawing.Size(1374, 879);
+            this.Name = "StaffDashboard";
+            this.Text = "StaffDashboard";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }

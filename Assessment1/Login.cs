@@ -49,20 +49,21 @@ namespace Assessment1
             loginController.UserName = textBox_username.Text;
             loginController.Password = textBox_password.Text;
 
-            errorProvider.Clear();
-
-            if (loginController.isLoginSuccessful()){
+            if (loginController.IsValid(loginController.UserName, loginController.Password))
+            {
                 MessageBox.Show("Login successful");
                 this.Hide();
-                
-                Home home = new Home();
-                home.ShowDialog();
-                this.Close();
 
-            } else {
-                errorProvider.SetError(textBox_password, "Invalid username or password");
-            }   
-            
+                StudentDashboard studentDashBoard = new StudentDashboard();
+                studentDashBoard.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+
+
         }
     }
 }
