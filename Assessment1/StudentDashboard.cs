@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Assessment1
 {
     public partial class StudentDashboard : Form
     {
+        BookController bookController = new BookController();
         public StudentDashboard()
         {
             InitializeComponent();
@@ -30,6 +32,25 @@ namespace Assessment1
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            bookController.BookName = textBox1.Text;
+
+            if (bookController.BookExists(bookController.BookName))
+            {
+                MessageBox.Show("Book found");
+            }
+            else
+            {
+                MessageBox.Show("Book not found");
+            }
         }
     }
 }

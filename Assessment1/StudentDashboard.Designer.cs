@@ -53,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 133);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 50);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 1;
             // 
             // panel1
@@ -71,6 +71,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textBox1
             // 
@@ -78,13 +79,14 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(402, 31);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lableBookSearch
             // 
             this.lableBookSearch.AutoSize = true;
             this.lableBookSearch.Location = new System.Drawing.Point(15, 142);
             this.lableBookSearch.Name = "lableBookSearch";
-            this.lableBookSearch.Size = new System.Drawing.Size(380, 50);
+            this.lableBookSearch.Size = new System.Drawing.Size(190, 25);
             this.lableBookSearch.TabIndex = 5;
             this.lableBookSearch.Text = "Type a book name";
             this.lableBookSearch.Click += new System.EventHandler(this.label2_Click_1);
