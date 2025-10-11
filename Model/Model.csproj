@@ -43,10 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookDAO.cs" />
+    <Compile Include="BookLogic.cs" />
+    <Compile Include="DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetBook.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBook.xsd</DependentUpon>
     </Compile>
     <Compile Include="LoginDAO.cs" />
     <Compile Include="LoginLogic.cs" />
@@ -70,6 +80,17 @@
     </None>
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBook.xsc">
+      <DependentUpon>DataSetBook.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBook.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBook.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetBook.xss">
+      <DependentUpon>DataSetBook.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
