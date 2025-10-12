@@ -33,5 +33,17 @@ namespace Model.Properties {
                 return ((string)(this["_2025_T3_DBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=myserver-phelippe.database.windows.net;Initial Catalog=LibraryDB;User" +
+            " ID=phelippe;Password=@Metz1603;Connect Timeout=30;Encrypt=True;TrustServerCerti" +
+            "ficate=True")]
+        public string LibraryDBConnectionString {
+            get {
+                return ((string)(this["LibraryDBConnectionString"]));
+            }
+        }
     }
 }

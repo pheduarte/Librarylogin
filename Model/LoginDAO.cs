@@ -21,5 +21,12 @@ namespace Model
 
             return userTable;
         }
+
+        public DataSetUser.TabUserDataTable GetUserAndPassword(string username, string password) {
+            DataSetUserTableAdapters.TabUserTableAdapter userAdapter = new DataSetUserTableAdapters.TabUserTableAdapter();
+            DataSetUser.TabUserDataTable userTable = userAdapter.GetUserAndPassword(username, password);
+            
+            return userTable;
+        }
     }
 }

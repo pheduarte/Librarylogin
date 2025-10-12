@@ -54,8 +54,8 @@ namespace Assessment1
             // Check if the user credentials are valid and open the appropriate dashboard according to user level
             if (loginController.IsValid(loginController.UserName, loginController.Password))
             {
-                MessageBox.Show("Login successful");
-                this.Hide();
+                //MessageBox.Show("Login successful");
+                //this.Hide();
                 
                 if (userLevel == 1)
                 {
