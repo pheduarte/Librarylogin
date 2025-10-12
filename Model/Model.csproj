@@ -34,6 +34,7 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BookDAO.cs" />
     <Compile Include="BookLogic.cs" />
+    <Compile Include="Books.cs" />
     <Compile Include="DataSet.cs">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
@@ -57,6 +59,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetBooks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBooks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
     </Compile>
     <Compile Include="LoginDAO.cs" />
     <Compile Include="LoginLogic.cs" />
@@ -91,6 +103,28 @@
     </None>
     <None Include="DataSetBook.xss">
       <DependentUpon>DataSetBook.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBooks.xsc">
+      <DependentUpon>DataSetBooks.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBooks.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBooks.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetBooks.xss">
+      <DependentUpon>DataSetBooks.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUser.xsc">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUser.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUser.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetUser.xss">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

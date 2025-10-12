@@ -18,7 +18,7 @@ namespace Model
         public int UserLevel { get => userLevel; set => userLevel = value; }
 
         private readonly LoginDAO loginDAO = new LoginDAO();
-        public DataSet1.TabUserDataTable userExists;
+        public DataSetUser.TabUserDataTable userExists;
 
         public LoginLogic() { 
 
@@ -28,7 +28,7 @@ namespace Model
         // Method to validate user credentials
         public bool IsValid(string username, string password)
         {
-            userExists = loginDAO.Login(username, password);
+            userExists = loginDAO.GetUserAndPassword(username, password);
 
             return userExists.Rows.Count > 0;
         }
@@ -36,7 +36,7 @@ namespace Model
         // Method to get user level based on username and password
         public string GetUserLevel(string username, string password)
         {
-            userExists = loginDAO.Login(username, password);
+            userExists = loginDAO.GetUserAndPassword(username, password);
 
             if (userExists.Rows.Count > 0)
             {
