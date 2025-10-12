@@ -37,6 +37,7 @@
             this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
             this.labelAuthor = new System.Windows.Forms.Label();
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,11 +130,22 @@
             this.textBoxAuthor.Size = new System.Drawing.Size(402, 31);
             this.textBoxAuthor.TabIndex = 9;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(1184, 21);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(144, 54);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logoff";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
+            // 
             // StudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 879);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.textBoxAuthor);
             this.Controls.Add(this.labelAuthor);
             this.Controls.Add(this.dataGridViewBooks);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.DataGridView dataGridViewBooks;
         private System.Windows.Forms.Label labelAuthor;
         private System.Windows.Forms.TextBox textBoxAuthor;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
