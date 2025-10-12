@@ -35,9 +35,29 @@ namespace Model
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"SELECT * FROM ViewBook
-                                 WHERE (BookName LIKE @Keyword OR Category LIKE @Keyword)
-                                 AND (Author LIKE @Author OR @Author = '')";
+
+                string query = @"
+                    SELECT 
+                        b.ISBN,
+                        b.BookName,
+                        a.AuthorName AS Author,
+                        c.CategoryName AS Category,
+                        l.LanguageName AS Language,
+                        b.PublishYear,
+                        b.Pages,
+                        b.Publisher
+                    FROM TabBook b
+                    INNER JOIN TabAuthor a ON b.Author = a.AID
+                    INNER JOIN TabCategory c ON b.Category = c.CID
+                    INNER JOIN TabLanguage l ON b.Language = l.LID
+                    WHERE 
+                        (b.BookName LIKE @Keyword 
+                         OR c.CategoryName LIKE @Keyword 
+                         OR a.AuthorName LIKE @Keyword)
+                        AND (a.AuthorName LIKE @Author OR @Author = '')
+                    ORDER BY b.PublishYear;
+                    ";
+
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");

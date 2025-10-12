@@ -42,6 +42,8 @@ namespace Assessment1
                 dataGridViewBooks.Columns["BookID"].Visible = false;
         }
 
+        
+
         private void label1_Click(object sender, EventArgs e)
         {
             
@@ -64,7 +66,7 @@ namespace Assessment1
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
+            LoadBooks();
         }
 
         private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,6 +78,13 @@ namespace Assessment1
         private void btnExplorer_Click(object sender, EventArgs e)
         {
             LoadBooks();
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login loginForm = new Login();
+            loginForm.Show();
         }
     }
 }
